@@ -9,12 +9,20 @@ function updateTime()
     document.querySelector('#time').innerHTML = currentDateTime;
 }
 
+let button = document.querySelector('button');
+button.onclick = alert('I was clicked');
 function toggleTime()
 {
-    set = '12';
-    console.log(set);
+    document.querySelector('button').innerHTML = "test";
 }
 
+function test()
+{
+    document.querySelector('button').innerHTML = "changed";
+}
+
+
+//document.addEventListener('DOMContentLoaded', toggleTime);
+//setInterval(updateTime, 1000);
+//document.querySelector('button').addEventListener("click", test);
 console.log("test");
-setInterval(updateTime, 1000);
-document.querySelector('#toggle').addEventListener(onclick, toggleTime);
