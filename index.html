@@ -8,7 +8,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
-    <body></body>
+    <body>
         <h1>Digital Clock</h1>
+        <p id="time"></p>
+        
+        <script>
+
+            function updateTime()
+            {
+                const now = new Date();
+
+                const currentDateTime = now.toLocaleString();
+
+                document.querySelector('#time').innerHTML = currentDateTime;
+            }
+
+            setInterval(updateTime, 1000);
+        </script>
+
     </body>
 </html>
