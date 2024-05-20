@@ -17,4 +17,4 @@ function toggleTime()
 
 console.log("test");
 setInterval(updateTime, 1000);
-document.querySelector('#toggle').addEventListener(onclick) = toggleTime();
+document.querySelector('#toggle').addEventListener(onclick, toggleTime);
