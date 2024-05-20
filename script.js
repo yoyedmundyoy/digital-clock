@@ -1,28 +1,49 @@
-let set = '24'
+let set = 12;
 
 function updateTime()
 {
     const now = new Date();
+    var currentDateTime;
 
-    const currentDateTime = now.toLocaleTimeString('en-US');
+    switch (set) {
+        case 24:
+            currentDateTime = now.toLocaleTimeString('it-IT');
+            break;
+        case 12:
+            currentDateTime = now.toLocaleTimeString('en-US');
+            break;
+        default:
+            break;
+    }
 
     document.querySelector('#time').innerHTML = currentDateTime;
 }
 
-let button = document.querySelector('button');
-button.onclick = alert('I was clicked');
-function toggleTime()
+function button()
 {
-    document.querySelector('button').innerHTML = "test";
+    var button = document.querySelector('button');
+    button.innerHTML = "View 24-hour format"
+    button.addEventListener('click', buttonClicked);
 }
 
-function test()
+function buttonClicked()
 {
-    document.querySelector('button').innerHTML = "changed";
+    var button = document.querySelector('button');
+    set = (set == 24) ? 12 : 24;
+    switch (set) {
+        case 24:
+            button.innerHTML = "View 12-hour format"
+            break;
+        case 12:
+            button.innerHTML = "View 24-hour format"
+            break;
+        default:
+            break;
+    }
+    updateTime();
 }
 
 
-//document.addEventListener('DOMContentLoaded', toggleTime);
-//setInterval(updateTime, 1000);
-//document.querySelector('button').addEventListener("click", test);
-console.log("test");
+document.addEventListener('DOMContentLoaded', button);
+setInterval(updateTime, 1000);
+
